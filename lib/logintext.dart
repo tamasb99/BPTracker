@@ -8,7 +8,7 @@ class Logintext extends StatelessWidget{
     return Container(
       width: double.infinity,
       margin: EdgeInsets.all(10),
-      child: Text(
+      child: const Text(
         'Beerpong Tracker',
         style: TextStyle(fontSize: 28),
         textAlign: TextAlign.center,

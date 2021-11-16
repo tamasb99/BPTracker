@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import './LoginText.dart';
-import './LoginScreen.dart';
-import './Buttons.dart';
+import './logintext.dart';
+import './loginscreen.dart';
+import './buttons.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,9 +33,30 @@ class _LoginScreen extends State<MyApp> {
         primarySwatch: Colors.deepOrange,
       ),
       home: LoginScreen()
+
     );
   }
 }
+/*class _TournamentScreen extends State<MyApp>{
+  @override
+  Widget build(BuildContext context) {
+
+    void loginFunction() {
+      print('Login');
+    }
+
+    var proba = ['asd'];
+
+    return MaterialApp(
+        title: 'Beerpong Tracker',
+        theme: ThemeData(
+          primarySwatch: Colors.deepOrange,
+        ),
+        home: LoginScreen()
+
+    );
+  }
+}*/
 
 
 

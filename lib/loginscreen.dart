@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './LoginText.dart';
-import './Buttons.dart';
+import './logintext.dart';
+import './buttons.dart';
 
 class LoginScreen extends StatelessWidget{
   @override
@@ -16,8 +16,8 @@ class LoginScreen extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Logintext(),
-          Padding(
-            padding: const EdgeInsets.all(18.0),
+          const Padding(
+            padding: EdgeInsets.all(18.0),
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -25,8 +25,8 @@ class LoginScreen extends StatelessWidget{
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(18.0),
+          const Padding(
+            padding: EdgeInsets.all(18.0),
             child: TextField(
               obscureText: true,
               decoration: InputDecoration(
