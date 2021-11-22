@@ -2,15 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Firebase
-
-
+// firebase core plugins
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import './beerpontext.dart';
 import './loginscreen.dart';
 import './buttons.dart';
+import './errors.dart';
 
-void main() => runApp(MyApp());
+void main()
+{
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -21,6 +26,9 @@ class MyApp extends StatefulWidget {
 }
 // Fokepernyo, LoginScreen
 class _LoginScreen extends State<MyApp> {
+
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   @override
   Widget build(BuildContext context) {
 
@@ -28,14 +36,24 @@ class _LoginScreen extends State<MyApp> {
       print('Login');
     }
 
-    var proba = ['asd'];
-
     return MaterialApp(
       title: 'Beerpong Tracker',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: LoginScreen()
+      home: FutureBuilder(
+        // Initialize FlutterFire:
+        future: _initialization,
+        builder: (context, snapshot) {
+
+          // Once complete, show your application
+          if (snapshot.connectionState == ConnectionState.done) {
+            return MyApp();
+          }
+          // Otherwise, show something whilst waiting for initialization to complete
+          return error_init_firebase();
+        },
+      )
 
     );
   }
