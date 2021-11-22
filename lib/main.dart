@@ -11,9 +11,11 @@ import './loginscreen.dart';
 import './buttons.dart';
 import './errors.dart';
 
-void main()
-{
+
+Future<void> main()
+async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -32,10 +34,6 @@ class _LoginScreen extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
 
-    void loginFunction() {
-      print('Login');
-    }
-
     return MaterialApp(
       title: 'Beerpong Tracker',
       theme: ThemeData(
@@ -47,14 +45,13 @@ class _LoginScreen extends State<MyApp> {
         builder: (context, snapshot) {
 
           // Once complete, show your application
-          if (snapshot.connectionState == ConnectionState.done) {
-            return MyApp();
+          if (snapshot.hasError) {
+            return Text('${snapshot.error.toString()}');
           }
           // Otherwise, show something whilst waiting for initialization to complete
-          return error_init_firebase();
+          return LoginScreen();
         },
       )
-
     );
   }
 }
