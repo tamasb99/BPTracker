@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.15)
-project(bptracker2 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.14)
+project(probaxvcxcv LANGUAGES CXX)
 
-set(BINARY_NAME "bptracker2")
+set(BINARY_NAME "probaxvcxcv")
 
 cmake_policy(SET CMP0063 NEW)
 
