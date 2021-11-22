@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './logintext.dart';
+import './beerpontext.dart';
 import './loginscreen.dart';
 import './buttons.dart';
 

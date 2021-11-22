@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './logintext.dart';
+import './beerpontext.dart';
 import './buttons.dart';
 
 class TournamentScreen extends StatelessWidget {

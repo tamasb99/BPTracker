@@ -81,7 +81,7 @@ class tournament_buttons extends StatelessWidget {
           child: ElevatedButton(
               onPressed: () => Navigator.push(
                   context, MaterialPageRoute(builder: (context) => RegisterScreen())),
-              // ide majd a register funkcio kell
+              // ide majd a view as spectator funkcio kell
               child: const Text('View as a spectator')),
         ),
         Padding(
