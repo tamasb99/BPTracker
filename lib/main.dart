@@ -12,24 +12,19 @@ import './buttons.dart';
 import './errors.dart';
 
 
-Future<void> main()
-async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main()
+{
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _LoginScreen();
   }
 }
-// Fokepernyo, LoginScreen
-class _LoginScreen extends State<MyApp> {
 
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+class _LoginScreen extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
@@ -39,19 +34,7 @@ class _LoginScreen extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: FutureBuilder(
-        // Initialize FlutterFire:
-        future: _initialization,
-        builder: (context, snapshot) {
-
-          // Once complete, show your application
-          if (snapshot.hasError) {
-            return Text('${snapshot.error.toString()}');
-          }
-          // Otherwise, show something whilst waiting for initialization to complete
-          return LoginScreen();
-        },
-      )
+      home: LoginScreen()
     );
   }
 }
