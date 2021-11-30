@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login_screen/tournament_details_screen.dart';
 import './beerpontext.dart';
 import './buttons.dart';
 
@@ -8,10 +10,6 @@ class TournamentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = List<String>.generate(100, (i) => "Item $i");
-
-    /*final dbRef = FirebaseDatabase.instance.reference();
-    String displaytext = dbRef.child('prop').key;
-    items.add(displaytext);*/
 
     return Scaffold(
       appBar: AppBar(
@@ -39,7 +37,20 @@ class TournamentScreen extends StatelessWidget {
                 itemCount: items.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Text(items[index]),
+                    title: RichText(
+                        text: TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: 'Tournament $index',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Navigator.push(
+                                        context, MaterialPageRoute(builder:
+                                        (context) => TournamentScreenDetails(tournament_id: items[index])));
+                                  }),
+                          ],
+                        ),
+                    ),
                   );
                 },
               ),
