@@ -5,32 +5,21 @@ import './buttons.dart';
 
 
 class TournamentScreenDetails extends StatelessWidget {
-  const TournamentScreenDetails({Key? key, required this.tournament_id}) : super(key: key);
+  const TournamentScreenDetails({Key? key, required this.tournament}) : super(key: key);
 
-  final tournament_id;
+  final tournament;
+
   @override
   Widget build(BuildContext context) {
-    //print(tournament_id);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tournament $tournament_id'),
+        title: Text(tournament.name),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Logintext(),
-            const Padding(
-              padding: EdgeInsets.all(18.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Tournament',
-                  // majd ide search function
-                ),
-              ),
-            ),
-            tournament_buttons(),
+            Text(tournament.name),
           ],
         ),
       ),
