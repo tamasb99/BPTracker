@@ -37,26 +37,3 @@ class _LoginScreen extends State<MyApp> {
 }
 
 
-/*class _TournamentScreen extends State<MyApp>{
-  @override
-  Widget build(BuildContext context) {
-
-    void loginFunction() {
-      print('Login');
-    }
-
-    var proba = ['asd'];
-
-    return MaterialApp(
-        title: 'Beerpong Tracker',
-        theme: ThemeData(
-          primarySwatch: Colors.deepOrange,
-        ),
-        home: LoginScreen()
-
-    );
-  }
-}*/
-
-
-

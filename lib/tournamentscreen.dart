@@ -9,13 +9,9 @@ class TournamentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final items = List<String>.generate(100, (i) => "Item $i");
 
-    /*final dbRef = FirebaseDatabase.instance.reference();
-    String displaytext = dbRef.child('prop').key;
-    items.add(displaytext);*/
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Log in'),
+        title: const Text('Tournament Screen'),
       ),
       body: Center(
         child: Column(
