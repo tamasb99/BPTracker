@@ -27,7 +27,7 @@ class TournamentScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Log in'),
+        title: const Text('Tournament Screen'),
       ),
       body: Center(
         child: Column(
