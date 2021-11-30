@@ -1,12 +1,8 @@
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './beerpontext.dart';
 import './buttons.dart';
 
-// Import the firebase_core and cloud_firestore plugin
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TournamentScreen extends StatelessWidget {
   @override

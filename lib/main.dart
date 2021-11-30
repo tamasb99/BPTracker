@@ -2,14 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// firebase core plugins
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+
 import 'package:flutter/material.dart';
 import './beerpontext.dart';
 import './loginscreen.dart';
 import './buttons.dart';
-import './errors.dart';
 
 
 void main()
