@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "527282541333",
+    "firebase_url": "https://bptracker-5ebb3-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "bptracker-5ebb3",
+    "storage_bucket": "bptracker-5ebb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527282541333:android:e341df3ab3be6812d30f1c",
+        "android_client_info": {
+          "package_name": "com.bpt.proba_bpt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527282541333-0cegk3hoi8el3m936lemcedrisb7pp8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5IrmTfL3kWxcdR2XTbV_ZjtZtjluMF98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527282541333-0cegk3hoi8el3m936lemcedrisb7pp8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

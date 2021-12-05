@@ -32,7 +32,7 @@ class Buttons1 extends StatelessWidget{
   }
 }
 
-class Buttons2 extends StatelessWidget{
+class ButtonLoginRegister extends StatelessWidget{
 
   @override
   Widget build(BuildContext context)
@@ -56,6 +56,11 @@ class Buttons2 extends StatelessWidget{
               // ide majd a register funkcio kell
               child: Text('Register')),
         ),
+        ElevatedButton(
+            onPressed: () async {
+
+            },
+            child: Text('Sign in as a Guest'))
       ],
     );
   }
