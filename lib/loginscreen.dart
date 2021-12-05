@@ -1,12 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proba_bpt/services/auth.dart';
+import 'package:proba_bpt/tournamentscreen.dart';
 import './beerpontext.dart';
-import './buttons.dart';
-import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget{
+
+import 'services/auth.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
 
+class _LoginScreenState extends State<LoginScreen> {
+
+  final AuthService _auth = AuthService();
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -37,9 +49,44 @@ class LoginScreen extends StatelessWidget{
               ),
             ),
           ),
-          Buttons2(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
+            crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: ElevatedButton(onPressed: () => () {},
+                    child: Text('Log in')),
+
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: ElevatedButton(
+                    onPressed: () => () {},
+                    // ide majd a register funkcio kell
+                    child: Text('Register')),
+              ),
+              ElevatedButton(
+                  onPressed: () async {
+                    dynamic result = await _auth.signInAnon();
+                    if (result == null)
+                      {
+                        print('error');
+                      }
+                    else
+                      {
+                        print('signed in');
+                        print(result);
+                        Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => TournamentScreen()));
+                      }
+                  },
+                  child: Text('Sign in as a Guest'))
+            ],
+          ),
         ],
       ),
     );
   }
 }
+
