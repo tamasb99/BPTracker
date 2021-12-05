@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.14)
-project(beerpongtracker LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.15)
+project(proba_bpt LANGUAGES CXX)
 
-set(BINARY_NAME "beerpongtracker")
+set(BINARY_NAME "proba_bpt")
 
 cmake_policy(SET CMP0063 NEW)
 
