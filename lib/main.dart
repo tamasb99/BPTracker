@@ -30,21 +30,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-/*
-class _LoginScreen extends State<MyApp> {
-
-  @override
-  Widget build(BuildContext context) {
-
-    return MaterialApp(
-      title: 'Beerpong Tracker',
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-      ),
-      home: LoginScreen()
-    );
-  }
-}
-*/
-

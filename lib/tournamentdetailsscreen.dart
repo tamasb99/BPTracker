@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './beerpontext.dart';
-import './buttons.dart';
+
 
 class Team extends StatelessWidget{
   const Team({Key? key, required this.team_name}) : super(key: key);

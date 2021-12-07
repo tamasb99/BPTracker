@@ -18,8 +18,6 @@ class TournamentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // majd adatbazisbol
-     //List<String>.generate(100, (i) => "Item $i");
-
     final tournaments = List.generate(50, (i) =>
         Tournament (i,'Name of the tournament $i'),
     );

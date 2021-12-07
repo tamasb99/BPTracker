@@ -79,7 +79,15 @@ class RegisterScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Buttons1(),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
+                crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
+                children: [
+                  GoBackButton(),
+                  RegisterButton(),
+                ]
+              )
             ],
           ),
         )

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:proba_bpt/tournamentscreen.dart';
-
 import 'main.dart';
 import './registerscreen.dart';
 
-class Buttons1 extends StatelessWidget{
+
+class GoBackButton extends StatelessWidget{
 
   @override
   Widget build(BuildContext context)
@@ -15,54 +15,32 @@ class Buttons1 extends StatelessWidget{
       children: [
         Padding(
           padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => MyApp())),
-              child: Text('Go back')),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(
               onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterScreen())),
-              // ide majd a register funkcio kell
-              child: Text('Register')),
+              context, MaterialPageRoute(builder: (context) => MyApp())),
+              child: Text('Go back')
+          ),
         ),
       ],
     );
   }
 }
 
-class ButtonLoginRegister extends StatelessWidget{
+class RegisterButton extends StatelessWidget{
 
   @override
   Widget build(BuildContext context)
   {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
-      crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => TournamentScreen())),
-              child: Text('Log in')),
-
-        ),
+    return
         Padding(
           padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(
               onPressed: () => Navigator.push(
                   context, MaterialPageRoute(builder: (context) => RegisterScreen())),
               // ide majd a register funkcio kell
-              child: Text('Register')),
-        ),
-        ElevatedButton(
-            onPressed: () async {
-
-            },
-            child: Text('Sign in as a Guest'))
-      ],
-    );
+              child: Text('Register')
+          ),
+        );
   }
 }
 
@@ -71,41 +49,55 @@ class tournament_buttons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
-      crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => TournamentScreen())),
-              child: const Text('Join Tournament')),
-
-        ),
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(
-              onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterScreen())),
-              // ide majd a view as spectator funkcio kell
-              child: const Text('View as a spectator')),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => TournamentScreen())),
-              child: const Text('Create Tournament')),
-
-        ),
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(
-              onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterScreen())),
-              // ide majd a register funkcio kell
-              child: const Text('Create Game')),
-        ),
-      ],
+    return Expanded(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
+        crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                  onPressed: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => TournamentScreen())),
+                  child: const Text('Join Tournament')
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                  onPressed: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => RegisterScreen())),
+                  // ide majd a view as spectator funkcio kell
+                  child: const Text('View as a spectator')
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                  onPressed: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => TournamentScreen())),
+                  child: const Text('Create Tournament')
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                  onPressed: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => RegisterScreen())),
+                  // ide majd a register funkcio kell
+                  child: const Text('Create Game')
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
