@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proba_bpt/tournamentscreen.dart';
+import '/tournamentscreen.dart';
 
 import 'main.dart';
 import './registerscreen.dart';

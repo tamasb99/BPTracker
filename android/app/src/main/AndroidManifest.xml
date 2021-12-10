@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.proba_bpt">
+    package="com.example.bptracker_sqlite">
    <application
-        android:label="proba_bpt"
+        android:label="bptracker_sqlite"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

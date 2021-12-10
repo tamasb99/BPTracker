@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:proba_bpt/services/auth.dart';
-import 'package:proba_bpt/tournamentscreen.dart';
+
+import '/tournamentscreen.dart';
 import './beerpontext.dart';
 
 
-import 'services/auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -15,8 +14,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
-  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -68,18 +65,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               ElevatedButton(
                   onPressed: () async {
-                    dynamic result = await _auth.signInAnon();
-                    if (result == null)
-                      {
-                        print('error');
-                      }
-                    else
-                      {
-                        print('signed in');
-                        print(result);
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => TournamentScreen()));
-                      }
                   },
                   child: Text('Sign in as a Guest'))
             ],

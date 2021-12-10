@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:proba_bpt/tournamentdetailsscreen.dart';
+import '/tournamentdetailsscreen.dart';
 import './beerpontext.dart';
 import './buttons.dart';
 
