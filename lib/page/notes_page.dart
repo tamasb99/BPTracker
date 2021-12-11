@@ -1,6 +1,7 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:bptracker_sqlite/db/notes_database.dart';
+import 'package:bptracker_sqlite/db/beerpong_database.dart';
 import 'package:bptracker_sqlite/model/note.dart';
 import 'package:bptracker_sqlite/page/edit_note_page.dart';
 import 'package:bptracker_sqlite/page/note_detail_page.dart';
@@ -12,7 +13,7 @@ class NotesPage extends StatefulWidget {
 }
 
 class _NotesPageState extends State<NotesPage> {
-  late List<Note> notes;
+  late List<User> notes;
   bool isLoading = false;
 
   @override
@@ -24,7 +25,7 @@ class _NotesPageState extends State<NotesPage> {
 
   @override
   void dispose() {
-    NotesDatabase.instance.close();
+    BeerpongDatabase.instance.close();
 
     super.dispose();
   }
@@ -32,7 +33,7 @@ class _NotesPageState extends State<NotesPage> {
   Future refreshNotes() async {
     setState(() => isLoading = true);
 
-    this.notes = await NotesDatabase.instance.readAllNotes();
+    this.notes = await BeerpongDatabase.instance.readAllNotes();
 
     setState(() => isLoading = false);
   }
@@ -87,8 +88,9 @@ class _NotesPageState extends State<NotesPage> {
 
           refreshNotes();
         },
-        child: NoteCardWidget(note: note, index: index),
+        child: NoteCardWidget(user: note, index: index),
       );
     },
   );
 }
+*/

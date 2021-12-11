@@ -14,18 +14,18 @@ final _lightColors = [
 class NoteCardWidget extends StatelessWidget {
   NoteCardWidget({
     Key? key,
-    required this.note,
+    required this.user,
     required this.index,
   }) : super(key: key);
 
-  final Note note;
+  final User user;
   final int index;
 
   @override
   Widget build(BuildContext context) {
     /// Pick colors from the accent colors based on index
     final color = _lightColors[index % _lightColors.length];
-    final time = DateFormat.yMMMd().format(note.createdTime);
+    final time = DateFormat.yMMMd().format(user.createdTime);
     final minHeight = getMinHeight(index);
 
     return Card(
@@ -43,7 +43,7 @@ class NoteCardWidget extends StatelessWidget {
             ),
             SizedBox(height: 4),
             Text(
-              note.title,
+              user.title,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,

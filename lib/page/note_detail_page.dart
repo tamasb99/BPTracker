@@ -1,6 +1,7 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:bptracker_sqlite/db/notes_database.dart';
+import 'package:bptracker_sqlite/db/beerpong_database.dart';
 import 'package:bptracker_sqlite/model/note.dart';
 import 'package:bptracker_sqlite/page/edit_note_page.dart';
 
@@ -17,7 +18,7 @@ class NoteDetailPage extends StatefulWidget {
 }
 
 class _NoteDetailPageState extends State<NoteDetailPage> {
-  late Note note;
+  late User note;
   bool isLoading = false;
 
   @override
@@ -30,7 +31,7 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
   Future refreshNote() async {
     setState(() => isLoading = true);
 
-    this.note = await NotesDatabase.instance.readNote(widget.noteId);
+    this.note = await BeerpongDatabase.instance.readNote(widget.noteId);
 
     setState(() => isLoading = false);
   }
@@ -85,9 +86,9 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
   Widget deleteButton() => IconButton(
     icon: Icon(Icons.delete),
     onPressed: () async {
-      await NotesDatabase.instance.delete(widget.noteId);
+      await BeerpongDatabase.instance.delete(widget.noteId);
 
       Navigator.of(context).pop();
     },
   );
-}
+}*/

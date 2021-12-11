@@ -1,10 +1,11 @@
+/*
 import 'package:flutter/material.dart';
-import 'package:bptracker_sqlite/db/notes_database.dart';
+import 'package:bptracker_sqlite/db/beerpong_database.dart';
 import 'package:bptracker_sqlite/model/note.dart';
 import 'package:bptracker_sqlite/widget/note_form_widget.dart';
 
 class AddEditNotePage extends StatefulWidget {
-  final Note? note;
+  final User? note;
 
   const AddEditNotePage({
     Key? key,
@@ -73,6 +74,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
     final isValid = _formKey.currentState!.validate();
 
     if (isValid) {
+
       final isUpdating = widget.note != null;
 
       if (isUpdating) {
@@ -93,11 +95,11 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       description: description,
     );
 
-    await NotesDatabase.instance.update(note);
+    await BeerpongDatabase.instance.update(note);
   }
 
   Future addNote() async {
-    final note = Note(
+    final note = User(
       title: title,
       isImportant: true,
       number: number,
@@ -105,6 +107,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       createdTime: DateTime.now(),
     );
 
-    await NotesDatabase.instance.create(note);
+    await BeerpongDatabase.instance.create(note);
   }
 }
+*/

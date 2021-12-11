@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '/tournamentscreen.dart';
-import './beerpontext.dart';
+import '../beerpontext.dart';
+import '../buttons.dart';
 
 
 
@@ -46,29 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
-            crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: ElevatedButton(onPressed: () => () {},
-                    child: Text('Log in')),
-
-              ),
-              Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: ElevatedButton(
-                    onPressed: () => () {},
-                    // ide majd a register funkcio kell
-                    child: Text('Register')),
-              ),
-              ElevatedButton(
-                  onPressed: () async {
-                  },
-                  child: Text('Sign in as a Guest'))
-            ],
-          ),
+          ButtonLoginRegister(),
         ],
       ),
     );

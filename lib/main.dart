@@ -2,13 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:bptracker_sqlite/page/loginscreen.dart';
 import 'package:bptracker_sqlite/page/notes_page.dart';
 import 'package:flutter/material.dart';
-import './beerpontext.dart';
-import './loginscreen.dart';
-import './buttons.dart';
 import 'package:flutter/services.dart';
-import 'package:bptracker_sqlite/page/notes_page.dart';
+
 
 
 void main() async
@@ -23,22 +21,22 @@ void main() async
 
 class MyApp extends StatelessWidget {
 
-  static final String title = 'Notes SQLite';
+  static final String title = 'BeerpongTracker';
 
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
     title: title,
-    themeMode: ThemeMode.dark,
+    themeMode: ThemeMode.light,
     theme: ThemeData(
-      primaryColor: Colors.black,
-      scaffoldBackgroundColor: Colors.blueGrey.shade900,
+      primarySwatch: Colors.deepOrange,
+      scaffoldBackgroundColor: Colors.white,
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.deepOrange,
         elevation: 0,
       ),
     ),
-    home: NotesPage(),
+    home: LoginScreen(),
   );
 }
 

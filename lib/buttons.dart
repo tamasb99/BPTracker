@@ -1,10 +1,11 @@
+import 'package:bptracker_sqlite/register_screen.dart';
 import 'package:flutter/material.dart';
 import '/tournamentscreen.dart';
 
 import 'main.dart';
-import './registerscreen.dart';
+import './register_form_widget.dart';
 
-class Buttons1 extends StatelessWidget{
+class ButtonsRegisterGoBack extends StatelessWidget{
 
   @override
   Widget build(BuildContext context)
@@ -22,9 +23,17 @@ class Buttons1 extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(
-              onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterScreen())),
-              // ide majd a register funkcio kell
+              onPressed: () /*=> Navigator.push(
+                  context, MaterialPageRoute(
+                  builder: (context) => RegisterScreen(
+                      onChangedUsername: onChangedUsername,
+                      onChangedName: onChangedName,
+                      onChangedEmail: onChangedEmail,
+                      onChangedTeamId: onChangedTeamId,
+                      onChangedPlayedGames: onChangedPlayedGames),
+              )
+              ),*/
+                {},
               child: Text('Register')),
         ),
       ],
@@ -33,6 +42,8 @@ class Buttons1 extends StatelessWidget{
 }
 
 class ButtonLoginRegister extends StatelessWidget{
+
+
 
   @override
   Widget build(BuildContext context)
@@ -44,7 +55,10 @@ class ButtonLoginRegister extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => TournamentScreen())),
+              context, MaterialPageRoute(
+              builder: (context) => TournamentScreen()
+          )
+          ),
               child: Text('Log in')),
 
         ),
@@ -52,13 +66,16 @@ class ButtonLoginRegister extends StatelessWidget{
           padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(
               onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterScreen())),
+                  context,MaterialPageRoute(builder:(context) =>
+              AddUser(),
+              ),
               // ide majd a register funkcio kell
-              child: Text('Register')),
+              ),
+              child: Text('Register')
+        ),
         ),
         ElevatedButton(
             onPressed: () async {
-
             },
             child: Text('Sign in as a Guest'))
       ],
@@ -85,8 +102,7 @@ class tournament_buttons extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(
-              onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterScreen())),
+              onPressed: () {},
               // ide majd a view as spectator funkcio kell
               child: const Text('View as a spectator')),
         ),
@@ -100,9 +116,8 @@ class tournament_buttons extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(
-              onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterScreen())),
-              // ide majd a register funkcio kell
+              onPressed: () {},
+              // ide majd a create game funkcio kell
               child: const Text('Create Game')),
         ),
       ],
