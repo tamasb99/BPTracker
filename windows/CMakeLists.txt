@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(proba_bpt LANGUAGES CXX)
+project(bptracker_sqlite LANGUAGES CXX)
 
-set(BINARY_NAME "proba_bpt")
+set(BINARY_NAME "bptracker_sqlite")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -2,49 +2,41 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-
+import 'package:bptracker_sqlite/page/loginscreen.dart';
+import 'package:bptracker_sqlite/page/notes_page.dart';
 import 'package:flutter/material.dart';
-import 'package:proba_bpt/wrapper.dart';
-import './beerpontext.dart';
-import './loginscreen.dart';
-import './buttons.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
+
 
 
 void main() async
 {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-      ),
-      home: Wrapper(),
-    );
-  }
-}
 
-
-/*
-class _LoginScreen extends State<MyApp> {
+  static final String title = 'BeerpongTracker';
 
   @override
-  Widget build(BuildContext context) {
-
-    return MaterialApp(
-      title: 'Beerpong Tracker',
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+  Widget build(BuildContext context) => MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: title,
+    themeMode: ThemeMode.light,
+    theme: ThemeData(
+      primarySwatch: Colors.deepOrange,
+      scaffoldBackgroundColor: Colors.white,
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.deepOrange,
+        elevation: 0,
       ),
-      home: LoginScreen()
-    );
-  }
+    ),
+    home: LoginScreen(),
+  );
 }
-*/
 
