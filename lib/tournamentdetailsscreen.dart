@@ -15,7 +15,7 @@ class Team extends StatelessWidget{
       crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
       children: [
         Padding(
-          padding: EdgeInsets.all(25.0),
+          padding: EdgeInsets.all(15.0),
               child: Text(team_name),
         ),
       ],

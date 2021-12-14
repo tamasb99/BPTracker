@@ -5,7 +5,12 @@ class Logintext extends StatelessWidget{
   @override
   Widget build(BuildContext context)
   {
-    return Container(
+
+    return Center(
+      child:Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+      children: [Container(
       width: double.infinity,
       margin: EdgeInsets.all(10),
       child: const Text(
@@ -13,6 +18,14 @@ class Logintext extends StatelessWidget{
         style: TextStyle(fontSize: 28),
         textAlign: TextAlign.center,
       )
+    ),
+    Container(
+    width: double.infinity,
+    margin: EdgeInsets.all(10),
+     child:Image.asset('assets/images/beerpong.jpg')
+        )
+  ]
+  )
     );
   }
 }
