@@ -13,12 +13,13 @@ class BeerpongDatabase {
   Future<Database> get database async {
     if (_database != null) return _database!;
 
-    _database = await _initDB('beerpong.db');
+    _database = await _initDB('beerpong2.db');
     return _database!;
   }
 
   Future<Database> _initDB(String filePath) async {
     final dbPath = await getDatabasesPath();
+    print(dbPath);
     final path = join(dbPath, filePath);
     return await openDatabase(path, version: 1, onCreate: _createDB);
   }
@@ -36,7 +37,7 @@ CREATE TABLE $tableUsers (
   ${UserFields.name} $textType,
   ${UserFields.email} $textType,
   ${UserFields.team_id} $integerType,
-  ${UserFields.played_games} $integerType // playedgamesnel valami baj
+  ${UserFields.played_games} $integerType 
   )
 ''');
   }
@@ -47,11 +48,11 @@ CREATE TABLE $tableUsers (
     print('XXXXXXXXX');
      final json = user.toJson();
      final columns =
-         '${UserFields.username}, ${UserFields.name}, ${UserFields.email}, ${UserFields.team_id}';
+         '${UserFields.username}, ${UserFields.name}, ${UserFields.email}, ${UserFields.team_id}, ${UserFields.played_games}';
      final values =
-         '${json[UserFields.username]}, ${json[UserFields.name]}, ${json[UserFields.email]}, ${json[UserFields.team_id]}';
+         '${json[UserFields.username]}, ${json[UserFields.name]}, ${json[UserFields.email]}, ${json[UserFields.team_id]}, ${UserFields.played_games}';
      final id = await db
-         .rawInsert('INSERT INTO $tableUsers ($columns) VALUES ($values)');
+         .rawInsert('INSERT INTO $tableUsers ($columns) VALUES (?,?,?,?,?)',[UserFields.username,UserFields.name,UserFields.email,UserFields.team_id,UserFields.played_games]);
 
     //final id = await db.insert(tableUsers, user.toJson());
 
