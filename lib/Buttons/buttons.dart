@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '/tournamentscreen.dart';
+import '../screens/tournamentscreen.dart';
 
-import 'main.dart';
-import './register_form_widget.dart';
+import '../main.dart';
 
 class ButtonsRegisterGoBack extends StatelessWidget{
 

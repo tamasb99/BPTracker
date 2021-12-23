@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '/tournamentdetailsscreen.dart';
-import './beerpontext.dart';
-import './buttons.dart';
+import 'tournamentdetailsscreen.dart';
+import '../beerpontext.dart';
+import '../Buttons/buttons.dart';
 
 class Tournament
 {
