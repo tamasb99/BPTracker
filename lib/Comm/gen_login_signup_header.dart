@@ -20,13 +20,13 @@ class genLoginSignupHeader extends StatelessWidget {
           ),
           SizedBox(height: 10.0),
           Image.asset(
-            "assets/images/logo.png",
+            "assets/images/beerpong.png",
             height: 150.0,
             width: 150.0,
           ),
           SizedBox(height: 10.0),
           Text(
-            'Sample Code',
+            'Log into your account',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.black38,

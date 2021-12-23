@@ -1,7 +1,31 @@
+import 'package:bptracker_sqlite/Screens/homescreen.dart';
 import 'package:flutter/material.dart';
 import '../screens/tournamentscreen.dart';
 
 import '../main.dart';
+
+class ButtonGoBack extends StatelessWidget{
+  @override
+  Widget build(BuildContext context)
+  {
+    return ElevatedButton(onPressed: () => Navigator.push(
+        context, MaterialPageRoute(builder: (context) => MyApp())),
+        child: Text('Go back')
+    );
+  }
+}
+
+class ButtonGoHome extends StatelessWidget{
+  @override
+  Widget build(BuildContext context)
+  {
+    return ElevatedButton(onPressed: () => Navigator.push(
+        context, MaterialPageRoute(builder: (context) => IndexScreen())),
+        child: Text('Go HomePage')
+    );
+  }
+}
+
 
 class ButtonsRegisterGoBack extends StatelessWidget{
 

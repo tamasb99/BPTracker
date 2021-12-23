@@ -7,7 +7,7 @@ import 'package:bptracker_sqlite/Model/user_model.dart';
 import 'package:bptracker_sqlite/Screens/registerscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'homescreen.dart';
+import 'myprofilescreen.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -68,7 +68,7 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login with Signup'),
+        title: Text('BeerpongTracker'),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -77,7 +77,7 @@ class _LoginFormState extends State<LoginForm> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                genLoginSignupHeader('Login'),
+                genLoginSignupHeader('BPTracker'),
                 getTextFormField(
                     controller: _conUserId,
                     icon: Icons.person,
@@ -92,16 +92,12 @@ class _LoginFormState extends State<LoginForm> {
                 Container(
                   margin: EdgeInsets.all(30.0),
                   width: double.infinity,
-                  child: FlatButton(
+                  child: ElevatedButton(
                     child: Text(
                       'Login',
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: login,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30.0),
                   ),
                 ),
                 Container(
@@ -109,8 +105,7 @@ class _LoginFormState extends State<LoginForm> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Does not have account? '),
-                      FlatButton(
-                        textColor: Colors.blue,
+                      ElevatedButton(
                         child: Text('Signup'),
                         onPressed: () {
                           Navigator.push(context,
