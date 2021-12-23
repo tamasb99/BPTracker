@@ -1,4 +1,3 @@
-import 'package:bptracker_sqlite/register_screen.dart';
 import 'package:flutter/material.dart';
 import '/tournamentscreen.dart';
 
@@ -65,12 +64,7 @@ class ButtonLoginRegister extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(
-              onPressed: () => Navigator.push(
-                  context,MaterialPageRoute(builder:(context) =>
-              AddUser(),
-              ),
-              // ide majd a register funkcio kell
-              ),
+              onPressed: () => {},
               child: Text('Register')
         ),
         ),

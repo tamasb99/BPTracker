@@ -14,22 +14,22 @@ class RegisterFormWidget extends StatelessWidget {
   final ValueChanged<String> onChangedUsername;
   final ValueChanged<String> onChangedName;
   final ValueChanged<String> onChangedEmail;
-  final ValueChanged<int> onChangedTeamId;
-  final ValueChanged<int> onChangedPlayedGames;
+  /*final ValueChanged<int> onChangedTeamId;
+  final ValueChanged<int> onChangedPlayedGames;*/
 
 
   const RegisterFormWidget({
     Key? key,
-    this.username = 'user',
-    this.name = 'useruser',
-    this.email = 'user@user.com',
+    this.username = '',
+    this.name = '',
+    this.email = '',
     this.team_id = 0,
     this.playedgames = 0,
     required this.onChangedUsername,
     required this.onChangedName,
     required this.onChangedEmail,
-    required this.onChangedTeamId,
-    required this.onChangedPlayedGames,
+    /*required this.onChangedTeamId,
+    required this.onChangedPlayedGames,*/
   }) : super(key: key);
 
   @override
@@ -45,8 +45,6 @@ class RegisterFormWidget extends StatelessWidget {
           SizedBox(height: 16),
           buildEmail(),
           SizedBox(height: 16),
-          buildTeamId(),
-          SizedBox(height: 16),
         ],
       ),
     ),
@@ -54,7 +52,7 @@ class RegisterFormWidget extends StatelessWidget {
 
   Widget buildUsername() => TextFormField(
     maxLines: 1,
-    initialValue: username,
+    //initialValue: username,
     style: TextStyle(
       color: Colors.deepOrange,
       fontWeight: FontWeight.bold,
@@ -65,8 +63,8 @@ class RegisterFormWidget extends StatelessWidget {
       hintText: 'Username',
       hintStyle: TextStyle(color: Colors.black),
     ),
-    validator: (title) =>
-    title != null && title.isEmpty ? 'The title cannot be empty' : null,
+    validator: (username) =>
+    username != null && username.isEmpty ? 'The username cannot be empty' : null,
     onChanged: onChangedUsername,
   );
 
@@ -80,8 +78,8 @@ class RegisterFormWidget extends StatelessWidget {
       hintText: 'Type your Name',
       hintStyle: TextStyle(color: Colors.black),
     ),
-    validator: (title) => title != null && title.isEmpty
-        ? 'The description cannot be empty'
+    validator: (username) => username != null && username.isEmpty
+        ? 'The Name cannot be empty'
         : null,
     onChanged: onChangedName,
   );
@@ -98,25 +96,9 @@ class RegisterFormWidget extends StatelessWidget {
       hintText: 'Email',
       hintStyle: TextStyle(color: Colors.black),
     ),
-    validator: (title) =>
-    title != null && title.isEmpty ? 'The title cannot be empty' : null,
+    validator: (username) =>
+    username != null && username.isEmpty ? 'The Email cannot be empty' : null,
     onChanged: onChangedEmail,
   );
-
-  Widget buildTeamId() => Row(
-    children: [
-      Text('Teamid(egyelore csak igy)'),
-      Expanded(
-        child: Slider(
-          value: (team_id ?? 0).toDouble(),
-          min: 0,
-          max: 5,
-          divisions: 5,
-          onChanged: (number) => onChangedTeamId(number.toInt()),
-        ),
-      )
-    ],
-  );
-
 
 }

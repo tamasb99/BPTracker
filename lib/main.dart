@@ -2,8 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:bptracker_sqlite/page/loginscreen.dart';
-import 'package:bptracker_sqlite/page/notes_page.dart';
+import 'package:bptracker_sqlite/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

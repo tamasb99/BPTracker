@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../beerpontext.dart';
-import '../buttons.dart';
+import 'beerpontext.dart';
+import 'buttons.dart';
 
 
 
