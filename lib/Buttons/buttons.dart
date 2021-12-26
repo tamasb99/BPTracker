@@ -25,6 +25,17 @@ class ButtonGoHome extends StatelessWidget{
     );
   }
 }
+class ButtonAddTournament extends StatelessWidget{
+  @override
+  Widget build(BuildContext context)
+  {
+    return ElevatedButton(onPressed: () => Navigator.push(
+        context, MaterialPageRoute(builder: (context) => IndexScreen())),
+        child: Text('Add a tournament')
+    );
+  }
+}
+
 
 
 class ButtonsRegisterGoBack extends StatelessWidget{

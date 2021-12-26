@@ -182,6 +182,7 @@ class _HomeFormState extends State<HomeForm> {
                       onPressed: delete,
                     ),
                   ),
+                  ButtonGoHome(),
                   ButtonGoBack(),
                 ],
               ),
