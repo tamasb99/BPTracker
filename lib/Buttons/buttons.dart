@@ -1,3 +1,4 @@
+import 'package:bptracker_sqlite/Screens/addtournamentscreen.dart';
 import 'package:bptracker_sqlite/Screens/homescreen.dart';
 import 'package:flutter/material.dart';
 import '../screens/tournamentscreen.dart';
@@ -30,7 +31,7 @@ class ButtonAddTournament extends StatelessWidget{
   Widget build(BuildContext context)
   {
     return ElevatedButton(onPressed: () => Navigator.push(
-        context, MaterialPageRoute(builder: (context) => IndexScreen())),
+        context, MaterialPageRoute(builder: (context) => AddTournament())),
         child: Text('Add a tournament')
     );
   }

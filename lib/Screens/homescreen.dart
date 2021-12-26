@@ -1,10 +1,12 @@
+import 'package:bptracker_sqlite/Comm/com_helper.dart';
 import 'package:bptracker_sqlite/Screens/tournamentdetailsscreen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:bptracker_sqlite/Databasehandler/dbhelpertournament.dart';
+import 'package:bptracker_sqlite/Databasehandler/dbhelper.dart';
 import 'package:bptracker_sqlite/Model/tournament_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:bptracker_sqlite/Buttons/buttons.dart';
+import 'package:bptracker_sqlite/Databasehandler/dbhelper.dart';
 
 import 'myprofilescreen.dart';
 
@@ -25,12 +27,12 @@ class _IndexScreenState extends State<IndexScreen> {
   @override
   void initState() {
     super.initState();
-    var result = _getAllTournament();
+    var result = _showAllTournament();
     print(result);
     dbHelper = DbHelper();
   }
 
-  Future<void> _getAllTournament() async {
+  Future<void> _showAllTournament() async {
     final SharedPreferences sp = await _pref;
 
     setState(() {
@@ -38,13 +40,23 @@ class _IndexScreenState extends State<IndexScreen> {
       _conDelTournamentId.text = sp.getString("user_id");
       _conTournamentName.text = sp.getString("user_name");
     });
-  }
 
+    String tname = _conTournamentName.text;
+    TournamentModel tModel = TournamentModel(tname);
+
+    var proba = dbHelper!.getAllTournament();
+    print(proba);
+    //return proba;
+
+  }
+  //_showAllTournament();
   //majd adatbazisbol
   final List<TournamentModel> tournaments = List.generate(
     20,
-    (i) => TournamentModel(i, 'Name of the tournament $i'),
+    (i) => TournamentModel('Name of the tournament $i'),
   );
+  //final proba = getAllTournament();
+  //print(proba);
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +92,7 @@ class _IndexScreenState extends State<IndexScreen> {
             children: [
               ButtonGoBack(),
               ButtonAddTournament(),
+
             ],
           ),
         ],

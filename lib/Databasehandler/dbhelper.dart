@@ -1,3 +1,4 @@
+import 'package:bptracker_sqlite/Model/tournament_model.dart';
 import 'package:bptracker_sqlite/Model/user_model.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
@@ -7,14 +8,16 @@ import 'dart:io' as io;
 class DbHelper {
   static late Database _db;
 
-  static const String DB_Name = 'test.db';
+  static const String DB_Name = 'test2.db';
   static const String Table_User = 'user';
+  static const String Table_Tournament = 'tournament';
   static const int Version = 1;
 
   static const String C_UserID = 'user_id';
   static const String C_UserName = 'user_name';
   static const String C_Email = 'email';
   static const String C_Password = 'password';
+  static const String C_TournamentName = 'name';
 
   Future<Database> get db async {
    /* if (_db != null) {
@@ -39,11 +42,20 @@ class DbHelper {
         " $C_Password TEXT, "
         " PRIMARY KEY ($C_UserID)"
         ")");
+    await db.execute("CREATE TABLE $Table_Tournament ("
+        " $C_TournamentName TEXT, "
+        " PRIMARY KEY ($C_TournamentName)"
+        ")");
   }
 
   Future<int> saveData(UserModel user) async {
     var dbClient = await db;
     var res = await dbClient.insert(Table_User, user.toMap());
+    return res;
+  }
+  Future<int> saveDataTournament(TournamentModel tournament) async {
+    var dbClient = await db;
+    var res = await dbClient.insert(Table_Tournament, tournament.toMap());
     return res;
   }
 
@@ -73,4 +85,17 @@ class DbHelper {
         .delete(Table_User, where: '$C_UserID = ?', whereArgs: [user_id]);
     return res;
   }
+
+
+  Future<TournamentModel?> getAllTournament() async {
+    var dbClient = await db;
+    var res = await dbClient.rawQuery("SELECT * FROM $Table_Tournament");
+
+    if (res.length > 0) {
+      return TournamentModel.fromMap(res.first);
+    }
+
+    return null;
+  }
+
 }
