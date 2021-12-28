@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/src/widgets/image.dart';
 class Logintext extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -8,18 +8,20 @@ class Logintext extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-          Container(
+         /* Container(
               width: double.infinity,
               margin: EdgeInsets.all(10),
               child: const Text(
                 'Beerpong Tracker',
                 style: TextStyle(fontSize: 28),
                 textAlign: TextAlign.center,
-              )),
-          /*Container(
+              )
+              */
+        Container(
               width: double.infinity,
               margin: EdgeInsets.all(10),
-              child: Image.asset('assets/images/beerpong.jpg'))*/
+              child: Image.asset('assets/images/beerpong.png')
+        )
         ]));
   }
 }

@@ -11,13 +11,13 @@ class genLoginSignupHeader extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 50.0),
-          Text(
+         /* Text(
             headerName,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: Colors.red,
                 fontSize: 40.0),
-          ),
+          ),*/
           SizedBox(height: 10.0),
           Image.asset(
             "assets/images/beerpong.png",

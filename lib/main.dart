@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
         title: title,
         themeMode: ThemeMode.light,
         theme: ThemeData(
-          primarySwatch: Colors.deepOrange,
-          scaffoldBackgroundColor: Colors.white,
+          primarySwatch: Colors.red,
+          scaffoldBackgroundColor: Colors.grey,
           appBarTheme: AppBarTheme(
-            backgroundColor: Colors.deepOrange,
+            backgroundColor: Colors.red,
             elevation: 0,
           ),
         ),

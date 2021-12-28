@@ -77,7 +77,7 @@ class _LoginFormState extends State<LoginForm> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                genLoginSignupHeader('BPTracker'),
+               genLoginSignupHeader('BPTracker'),
                 getTextFormField(
                     controller: _conUserId,
                     icon: Icons.person,
@@ -106,7 +106,7 @@ class _LoginFormState extends State<LoginForm> {
                     children: [
                       Text('Does not have account? '),
                       ElevatedButton(
-                        child: Text('Signup'),
+                        child: Text('Sign Up'),
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (_) => SignupForm()));
