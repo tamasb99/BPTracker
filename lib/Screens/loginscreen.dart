@@ -6,6 +6,7 @@ import 'package:bptracker_sqlite/DatabaseHandler/DbHelper.dart';
 import 'package:bptracker_sqlite/Model/user_model.dart';
 import 'package:bptracker_sqlite/Screens/registerscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'myprofilescreen.dart';
 
@@ -64,6 +65,14 @@ class _LoginFormState extends State<LoginForm> {
     sp.setString("password", user.password);
   }
 
+  _launchURL() async {
+    const url = 'https://sorpingpong.hu/a-sorpingpong-szabalyai/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,8 +109,10 @@ class _LoginFormState extends State<LoginForm> {
                     onPressed: login,
                   ),
                 ),
-                Container(
-                  child: Row(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: [Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Does not have account? '),
@@ -111,15 +122,28 @@ class _LoginFormState extends State<LoginForm> {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (_) => SignupForm()));
                         },
-                      )
+                      ),
                     ],
                   ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Want to read the rules? '),
+                        ElevatedButton(
+                          child: Text('Educate yourself'),
+                          onPressed: _launchURL
+
+                          ),
+                      ],
+                    ),
+                  ]
                 ),
-              ],
-            ),
+         ]
+          ),
           ),
         ),
       ),
+
     );
   }
 }

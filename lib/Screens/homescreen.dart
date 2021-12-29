@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bptracker_sqlite/Comm/com_helper.dart';
 import 'package:bptracker_sqlite/Screens/tournamentdetailsscreen.dart';
 import 'package:flutter/gestures.dart';
@@ -49,6 +51,19 @@ class _IndexScreenState extends State<IndexScreen> {
     //return proba;
 
   }
+var NumTeam=8;
+ void seeding(NumTeam) async{
+    var rounds=log(NumTeam)/log(2)-1;
+    var pls=[];
+    print(rounds);
+    for (var i=0;i<rounds;++i) {
+     // pls = nextLayer(pls);
+    }
+   // return pls;
+    }
+
+
+
   //_showAllTournament();
   //majd adatbazisbol
   final List<TournamentModel> tournaments = List.generate(
@@ -79,7 +94,7 @@ class _IndexScreenState extends State<IndexScreen> {
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   height: 50,
-                  color: Colors.deepOrange,
+                  color: Colors.red,
                   child: Center(child: Text('${tournaments[index].name}')),
                 );
               },
