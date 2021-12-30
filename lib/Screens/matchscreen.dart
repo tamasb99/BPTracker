@@ -4,10 +4,12 @@ import 'dart:core';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_countdown_timer/current_remaining_time.dart';
+import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'tournamentdetailsscreen.dart';
 import '../beerpontext.dart';
 import '../Buttons/buttons.dart';
-
+import 'package:countdown_flutter/countdown_flutter.dart';
 
 
 class MatchScreen extends StatefulWidget {
@@ -23,6 +25,9 @@ class _MatchScreenState extends State<MatchScreen> {
    var pl1_2=0; // elso csapat masodik jatekos pontok
    var pl2_1=0; //masodik csapat elso jatekos pontok
    var pl2_2=0; //masodik csapat masodik jatekos pontok
+
+   int endTime=DateTime.now().millisecondsSinceEpoch+1000*30;
+
 
 
    void incrementCounter3() {
@@ -50,6 +55,9 @@ class _MatchScreenState extends State<MatchScreen> {
      });
    }
 
+   void checkwinner(){
+     if (point1==10 || point2==10 ) { }
+   }
 
    @override
   Widget build(BuildContext context) {
@@ -64,16 +72,23 @@ class _MatchScreenState extends State<MatchScreen> {
             'Name of the match',
             style: TextStyle(height: null, fontSize: 30),
           ),
-         ElevatedButton(onPressed: ()=>{
-
-         },
+          CountdownFormatted(
+            duration: Duration(minutes: 12),
+            builder: (BuildContext ctx, String remaining) {
+              return Text(remaining); // 00:12:00
+            },
+          ),
+         Row(
+             mainAxisAlignment: MainAxisAlignment.spaceAround,
+         children:[
+           ElevatedButton(onPressed: ()=>{},
              child: new Text("Team1 points: $point1")
          ),
-          ElevatedButton(onPressed: ()=>{
-
-          },
+          ElevatedButton(onPressed: ()=>{},
               child: new Text("Team2 points: $point2")
           ),
+          ]
+         ),
           ElevatedButton(onPressed: ()=>{
             incrementCounter3()
           },
