@@ -51,16 +51,6 @@ class _IndexScreenState extends State<IndexScreen> {
     //return proba;
 
   }
-var NumTeam=8;
- void seeding(NumTeam) async{
-    var rounds=log(NumTeam)/log(2)-1;
-    var pls=[];
-    print(rounds);
-    for (var i=0;i<rounds;++i) {
-     // pls = nextLayer(pls);
-    }
-   // return pls;
-    }
 
 
 
@@ -72,6 +62,9 @@ var NumTeam=8;
   );
   //final proba = getAllTournament();
   //print(proba);
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -92,12 +85,16 @@ var NumTeam=8;
               padding: const EdgeInsets.all(8),
               itemCount: tournaments.length,
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  height: 50,
-                  color: Colors.red,
-                  child: Center(child: Text('${tournaments[index].name}')),
+
+                return Center(child: ElevatedButton(
+                   onPressed: () =>{ Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Tournamentdetail()))
+                   },
+                     child:  Text('${tournaments[index].name}'),
+                ),
                 );
-              },
+                },
+
               separatorBuilder: (BuildContext context, int index) =>
                   const Divider(),
             ),
