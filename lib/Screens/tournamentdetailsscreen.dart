@@ -169,7 +169,14 @@ class _TournamentdetailScreenState extends State<Tournamentdetail> {
       appBar: AppBar(
         title: Text('BeerpongTracker'),
       ),
-      body: Column(
+      body:Container(
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage("assets/images/wallpaper.jpg"),
+      opacity: 0.7,
+      fit: BoxFit.cover)),
+      child:Column(
         children: [
           SizedBox(height: 25.0),
           Text(
@@ -187,7 +194,7 @@ class _TournamentdetailScreenState extends State<Tournamentdetail> {
                   onPressed: () =>{ Navigator.push(
                       context, MaterialPageRoute(builder: (context) => MatchScreen()))
                   },
-                  child:  Text('${matches[index].team1}-${matches[index].team2}'),
+                  child:  Text('${matches[index].team1} - ${matches[index].team2}'),
                 ),
                 );
               },
@@ -206,6 +213,7 @@ class _TournamentdetailScreenState extends State<Tournamentdetail> {
           ),
         ],
       ),
+      )
     );
   }
 }

@@ -62,7 +62,14 @@ class _SignupFormState extends State<SignupForm> {
       appBar: AppBar(
         title: Text('Login with Signup'),
       ),
-      body: Form(
+      body: Container(
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage("assets/images/wallpaper.jpg"),
+      opacity: 0.7,
+      fit: BoxFit.cover)),
+      child:Form(
         key: _formKey,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -105,7 +112,7 @@ class _SignupFormState extends State<SignupForm> {
                   Container(
                     margin: EdgeInsets.all(30.0),
                     width: double.infinity,
-                    child: FlatButton(
+                    child: TextButton(
                       child: Text(
                         'Signup',
                         style: TextStyle(color: Colors.white),
@@ -141,6 +148,7 @@ class _SignupFormState extends State<SignupForm> {
           ),
         ),
       ),
+    )
     );
   }
 }

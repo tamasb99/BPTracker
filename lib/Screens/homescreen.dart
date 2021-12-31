@@ -72,7 +72,14 @@ class _IndexScreenState extends State<IndexScreen> {
       appBar: AppBar(
         title: Text('BeerpongTracker'),
       ),
-      body: Column(
+      body: Container(
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage("assets/images/wallpaper.jpg"),
+      opacity: 0.7,
+      fit: BoxFit.cover)),
+      child: Column(
         children: [
           SizedBox(height: 25.0),
           Text(
@@ -80,6 +87,7 @@ class _IndexScreenState extends State<IndexScreen> {
             style: TextStyle(height: null, fontSize: 30),
           ),
           Container(
+
             height: 400,
             child: ListView.separated(
               padding: const EdgeInsets.all(8),
@@ -109,6 +117,7 @@ class _IndexScreenState extends State<IndexScreen> {
           ),
         ],
       ),
+      )
     );
   }
 }

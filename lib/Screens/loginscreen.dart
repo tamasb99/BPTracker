@@ -79,7 +79,16 @@ class _LoginFormState extends State<LoginForm> {
       appBar: AppBar(
         title: Text('BeerpongTracker'),
       ),
-      body: SingleChildScrollView(
+      body: Container(
+
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage("assets/images/wallpaper.jpg"),
+      opacity: 0.7,
+      fit: BoxFit.cover)),
+
+     child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
           child: Center(
@@ -143,7 +152,7 @@ class _LoginFormState extends State<LoginForm> {
           ),
         ),
       ),
-
+      )
     );
   }
 }

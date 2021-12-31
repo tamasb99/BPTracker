@@ -1,16 +1,18 @@
 import 'dart:core';
 import 'dart:core';
 
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_countdown_timer/current_remaining_time.dart';
-import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
+//import 'package:flutter_countdown_timer/current_remaining_time.dart';
+//import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'tournamentdetailsscreen.dart';
 import '../beerpontext.dart';
 import '../Buttons/buttons.dart';
-import 'package:countdown_flutter/countdown_flutter.dart';
-
+//import 'package:countdown_flutter/countdown_flutter.dart';
+import 'package:timer_count_down/timer_count_down.dart';
+import 'package:timer_count_down/timer_controller.dart';
 
 class MatchScreen extends StatefulWidget {
   @override
@@ -28,6 +30,8 @@ class _MatchScreenState extends State<MatchScreen> {
 
    int endTime=DateTime.now().millisecondsSinceEpoch+1000*30;
 
+   final CountdownController _controller =
+   new CountdownController(autoStart: true);
 
 
    void incrementCounter3() {
@@ -61,23 +65,38 @@ class _MatchScreenState extends State<MatchScreen> {
 
    @override
   Widget build(BuildContext context) {
+    var pressAttention;
     return Scaffold(
       appBar: AppBar(
         title: Text('BeerpongTracker'),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 25.0),
-          Text(
-            'Name of the match',
-            style: TextStyle(height: null, fontSize: 30),
-          ),
+      body: Container(
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage("assets/images/wallpaper.jpg"),
+      opacity: 0.7,
+      fit: BoxFit.cover)),
+        child: Column(
+     children:[
+         // SizedBox(height: 25.0),
+         // Text(
+         //   'Name of the match',
+          //  style: TextStyle(height: null, fontSize: 30),
+     //     ),
+     /* ElevatedButton(
+      child: new Text('Attention'),
+    //  color: pressAttention ? Colors.grey : Colors.blue,
+      onPressed: () => setState(() => pressAttention = !pressAttention),
+    ),
+
           CountdownFormatted(
             duration: Duration(minutes: 12),
             builder: (BuildContext ctx, String remaining) {
-              return Text(remaining); // 00:12:00
+              return Text(remaining,style: TextStyle(height: 5, fontSize: 30)); // 00:12:00
             },
-          ),
+          ),*/
+
          Row(
              mainAxisAlignment: MainAxisAlignment.spaceAround,
          children:[
@@ -109,16 +128,69 @@ class _MatchScreenState extends State<MatchScreen> {
           },
               child: new Text("Team2 player2 points: $pl2_2")
           ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          // Start
+          ElevatedButton(
+            child: Text('Start'),
+            onPressed: () {
+              _controller.start();
+            },
+          ),
+          // Pause
+          ElevatedButton(
+            child: Text('Pause'),
+            onPressed: () {
+              _controller.pause();
+            },
+          ),
+          // Resume
+          ElevatedButton(
+            child: Text('Resume'),
+            onPressed: () {
+              _controller.resume();
+            },
+          ),
+          // Stop
+          ElevatedButton(
+            child: Text('Restart'),
+            onPressed: () {
+              _controller.restart();
+            },
+          ),
+        ],
+      ),
+          Countdown(
+            controller: _controller,
+            seconds: 720,
+            build: (_, double time) => Text(
+              '${((time/60)-1).round()}:${(time%60).round()}',
+              style: TextStyle(
+                fontSize: 100,
+                color: Colors.grey
+              ),
+            ),
+            interval: Duration(milliseconds: 100),
+            onFinished: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Timer is done!'),
+                ),
+              );
+            },
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              ButtonGoBack(),
+           //   ButtonGoBack(),
 
 
             ],
           ),
         ],
       ),
+      )
     );
   }
 }

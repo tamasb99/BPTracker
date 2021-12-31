@@ -71,7 +71,14 @@ class _AddTournamentState extends State<AddTournament> {
       appBar: AppBar(
         title: Text('BeerpongTracker'),
       ),
-      body: Form(
+      body:Container(
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage("assets/images/wallpaper.jpg"),
+      opacity: 0.7,
+      fit: BoxFit.cover)),
+      child:Form(
         key: _formKey,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -107,6 +114,7 @@ class _AddTournamentState extends State<AddTournament> {
           ),
         ),
       ),
+      )
     );
   }
 }

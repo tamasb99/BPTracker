@@ -114,7 +114,14 @@ class _HomeFormState extends State<HomeForm> {
       appBar: AppBar(
         title: Text('My Profile'),
       ),
-      body: Form(
+      body:Container(
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage("assets/images/wallpaper.jpg"),
+      opacity: 0.7,
+      fit: BoxFit.cover)),
+     child: Form(
         key: _formKey,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -190,6 +197,7 @@ class _HomeFormState extends State<HomeForm> {
           ),
         ),
       ),
+      )
     );
   }
 }
