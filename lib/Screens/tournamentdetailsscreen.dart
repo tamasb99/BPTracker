@@ -194,7 +194,7 @@ class _TournamentdetailScreenState extends State<Tournamentdetail> {
                   onPressed: () =>{ Navigator.push(
                       context, MaterialPageRoute(builder: (context) => MatchScreen()))
                   },
-                  child:  Text('${matches[index].team1} - ${matches[index].team2}'),
+                  child:  Text('${matches[index].team1} - ${matches[index].team2}',style: TextStyle(color: Colors.white, fontSize: 18),),
                 ),
                 );
               },

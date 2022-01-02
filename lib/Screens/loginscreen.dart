@@ -113,7 +113,7 @@ class _LoginFormState extends State<LoginForm> {
                   child: ElevatedButton(
                     child: Text(
                       'Login',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     onPressed: login,
                   ),
@@ -124,9 +124,9 @@ class _LoginFormState extends State<LoginForm> {
                   children: [Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Does not have account? '),
+                      Text('Does not have account? ', style: TextStyle(color: Colors.black, fontSize: 18),),
                       ElevatedButton(
-                        child: Text('Sign Up'),
+                        child: Text('Sign Up',style: TextStyle(color: Colors.white, fontSize: 18),),
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (_) => SignupForm()));
@@ -137,9 +137,9 @@ class _LoginFormState extends State<LoginForm> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Want to read the rules? '),
+                        Text('Want to read the rules? ',style: TextStyle(color: Colors.black, fontSize: 18),),
                         ElevatedButton(
-                          child: Text('Educate yourself'),
+                          child: Text('Educate yourself',style: TextStyle(color: Colors.white, fontSize: 18),),
                           onPressed: _launchURL
 
                           ),

@@ -98,7 +98,7 @@ class _IndexScreenState extends State<IndexScreen> {
                    onPressed: () =>{ Navigator.push(
                     context, MaterialPageRoute(builder: (context) => Tournamentdetail()))
                    },
-                     child:  Text('${tournaments[index].name}'),
+                     child:  Text('${tournaments[index].name}',style: TextStyle(color: Colors.white, fontSize: 18),),
                 ),
                 );
                 },

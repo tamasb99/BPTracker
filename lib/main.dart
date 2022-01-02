@@ -14,6 +14,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   static final String title = 'BeerpongTracker';
 
+
   @override
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,

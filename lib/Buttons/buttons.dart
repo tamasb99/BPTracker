@@ -11,7 +11,7 @@ class ButtonGoBack extends StatelessWidget{
   {
     return ElevatedButton(onPressed: () => Navigator.push(
         context, MaterialPageRoute(builder: (context) => MyApp())),
-        child: Text('Go back')
+        child: Text('Go back',style: TextStyle(color: Colors.white, fontSize: 18),)
     );
   }
 }
@@ -22,7 +22,7 @@ class ButtonGoHome extends StatelessWidget{
   {
     return ElevatedButton(onPressed: () => Navigator.push(
         context, MaterialPageRoute(builder: (context) => IndexScreen())),
-        child: Text('Go HomePage')
+        child: Text('Go HomePage',style: TextStyle(color: Colors.white, fontSize: 18),)
     );
   }
 }
