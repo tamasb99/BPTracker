@@ -120,7 +120,7 @@ class _SignupFormState extends State<SignupForm> {
                       onPressed: signUp,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.red,
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                   ),
@@ -129,8 +129,7 @@ class _SignupFormState extends State<SignupForm> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text('Does you have account? '),
-                        FlatButton(
-                          textColor: Colors.blue,
+                        ElevatedButton(
                           child: Text('Sign In'),
                           onPressed: () {
                             Navigator.pushAndRemoveUntil(
