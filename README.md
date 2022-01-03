@@ -24,7 +24,8 @@
 <!-- ABOUT THE PROJECT -->
 ## A projekt célja
 
-A projekt celja egy sörpong  bajnokság nyomonkövetése ahol lehet számolni a meccsen dobott labdák számat , a különleges dobásokat és illetve ki mennyit dobot be s ezeket a rangsorolni a felhasználók bedobott labda pontszáma szerint. Ezeket az adatokat egy adatbazisban tároltuk ahonnan miután a felhasználó regisztrált ahányszor belép esélyt kap felhasználói adatai változtatásra. Mivel a mai világban szinte mindenki rendelkezik okostelefonnal, így akár egy meccs közben is könnyedén követheti a meccs állását, és vezetheti a saját statisztikáját. A felhasználó egyaránt lekérdezheti a jelenlevő bajnokságokat, illetve létre is hozhat bajnokságot.
+A projekt celja egy sörpong  bajnokság nyomonkövetése, ahol lehet számolni a meccsen dobott labdák számát, a különleges dobásokat, illetve ki mennyit dobot be a poharakba, ezeket a rangsorolni a felhasználók bedobott labda pontszáma szerint. Ezeket az adatokat egy adatbazisban tároltuk ahonnan miután a felhasználó regisztrált ahányszor belép esélyt kap felhasználói adatai változtatásra. Mivel a mai világban szinte mindenki rendelkezik okostelefonnal, így akár egy meccs közben is könnyedén követheti a meccs állását, és vezetheti a saját statisztikáját. A felhasználó egyaránt lekérdezheti a jelenlevő bajnokságokat, illetve létre is hozhat bajnokságot.
+
 
 
 <div align="left">
