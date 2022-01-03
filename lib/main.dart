@@ -1,9 +1,4 @@
-// Copyright 2018 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'Screens/loginscreen.dart';
 
@@ -13,7 +8,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   static final String title = 'BeerpongTracker';
-
 
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -29,6 +23,5 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: LoginForm(),
-
       );
 }

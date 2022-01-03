@@ -6,7 +6,6 @@ import 'package:bptracker_sqlite/Comm/gen_text_form_field.dart';
 import 'package:bptracker_sqlite/DatabaseHandler/DbHelper.dart';
 import 'package:bptracker_sqlite/Model/user_model.dart';
 import 'package:bptracker_sqlite/Screens/loginscreen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SignupForm extends StatefulWidget {
   @override
@@ -59,95 +58,95 @@ class _SignupFormState extends State<SignupForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login with Signup'),
-      ),
-      body: Container(
-      constraints: BoxConstraints.expand(),
-      decoration: BoxDecoration(
-      image: DecorationImage(
-      image: AssetImage("assets/images/wallpaper.jpg"),
-      opacity: 0.7,
-      fit: BoxFit.cover)),
-      child:Form(
-        key: _formKey,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Container(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  genLoginSignupHeader('Signup'),
-                  getTextFormField(
-                      controller: _conUserId,
-                      icon: Icons.person,
-                      hintName: 'User ID'),
-                  SizedBox(height: 10.0),
-                  getTextFormField(
-                      controller: _conUserName,
-                      icon: Icons.person_outline,
-                      inputType: TextInputType.name,
-                      hintName: 'User Name'),
-                  SizedBox(height: 10.0),
-                  getTextFormField(
-                      controller: _conEmail,
-                      icon: Icons.email,
-                      inputType: TextInputType.emailAddress,
-                      hintName: 'Email'),
-                  SizedBox(height: 10.0),
-                  getTextFormField(
-                    controller: _conPassword,
-                    icon: Icons.lock,
-                    hintName: 'Password',
-                    isObscureText: true,
-                  ),
-                  SizedBox(height: 10.0),
-                  getTextFormField(
-                    controller: _conCPassword,
-                    icon: Icons.lock,
-                    hintName: 'Confirm Password',
-                    isObscureText: true,
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(30.0),
-                    width: double.infinity,
-                    child: TextButton(
-                      child: Text(
-                        'Signup',
-                        style: TextStyle(color: Colors.white),
+        appBar: AppBar(
+          title: Text('Login with Signup'),
+        ),
+        body: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/wallpaper.jpg"),
+                  //opacity: 0.7,
+                  fit: BoxFit.cover)),
+          child: Form(
+            key: _formKey,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Container(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      genLoginSignupHeader('Signup'),
+                      getTextFormField(
+                          controller: _conUserId,
+                          icon: Icons.person,
+                          hintName: 'Username'),
+                      SizedBox(height: 10.0),
+                      getTextFormField(
+                          controller: _conUserName,
+                          icon: Icons.person_outline,
+                          inputType: TextInputType.name,
+                          hintName: 'Name'),
+                      SizedBox(height: 10.0),
+                      getTextFormField(
+                          controller: _conEmail,
+                          icon: Icons.email,
+                          inputType: TextInputType.emailAddress,
+                          hintName: 'Email'),
+                      SizedBox(height: 10.0),
+                      getTextFormField(
+                        controller: _conPassword,
+                        icon: Icons.lock,
+                        hintName: 'Password',
+                        isObscureText: true,
                       ),
-                      onPressed: signUp,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Does you have account? '),
-                        ElevatedButton(
-                          child: Text('Sign In'),
-                          onPressed: () {
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(builder: (_) => LoginForm()),
+                      SizedBox(height: 10.0),
+                      getTextFormField(
+                        controller: _conCPassword,
+                        icon: Icons.lock,
+                        hintName: 'Confirm Password',
+                        isObscureText: true,
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(30.0),
+                        width: double.infinity,
+                        child: TextButton(
+                          child: Text(
+                            'Signup',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onPressed: signUp,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                      ),
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Does you have account? '),
+                            ElevatedButton(
+                              child: Text('Sign In'),
+                              onPressed: () {
+                                Navigator.pushAndRemoveUntil(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => LoginForm()),
                                     (Route<dynamic> route) => false);
-                          },
-                        )
-                      ],
-                    ),
+                              },
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
-      ),
-    )
-    );
+        ));
   }
 }

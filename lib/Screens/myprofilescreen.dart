@@ -9,7 +9,6 @@ import 'package:bptracker_sqlite/Buttons/buttons.dart';
 
 import '../main.dart';
 
-
 class HomeForm extends StatefulWidget {
   @override
   _HomeFormState createState() => _HomeFormState();
@@ -111,93 +110,92 @@ class _HomeFormState extends State<HomeForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Profile'),
-      ),
-      body:Container(
-      constraints: BoxConstraints.expand(),
-      decoration: BoxDecoration(
-      image: DecorationImage(
-      image: AssetImage("assets/images/wallpaper.jpg"),
-      opacity: 0.7,
-      fit: BoxFit.cover)),
-     child: Form(
-        key: _formKey,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Container(
-            margin: EdgeInsets.only(top: 20.0),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  //Update
-                  getTextFormField(
-                      controller: _conUserId,
-                      isEnable: false,
-                      icon: Icons.person,
-                      hintName: 'User ID'),
-                  SizedBox(height: 10.0),
-                  getTextFormField(
-                      controller: _conUserName,
-                      icon: Icons.person_outline,
-                      inputType: TextInputType.name,
-                      hintName: 'User Name'),
-                  SizedBox(height: 10.0),
-                  getTextFormField(
-                      controller: _conEmail,
-                      icon: Icons.email,
-                      inputType: TextInputType.emailAddress,
-                      hintName: 'Email'),
-                  SizedBox(height: 10.0),
-                  getTextFormField(
-                    controller: _conPassword,
-                    icon: Icons.lock,
-                    hintName: 'Password',
-                    isObscureText: true,
-                  ),
-                  SizedBox(height: 10.0),
-                  Container(
-                    margin: EdgeInsets.all(30.0),
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      child: Text(
-                        'Update',
-                        style: TextStyle(color: Colors.white),
+        appBar: AppBar(
+          title: Text('My Profile'),
+        ),
+        body: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/wallpaper.jpg"),
+                  //opacity: 0.7,
+                  fit: BoxFit.cover)),
+          child: Form(
+            key: _formKey,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Container(
+                margin: EdgeInsets.only(top: 20.0),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      //Update
+                      getTextFormField(
+                          controller: _conUserId,
+                          isEnable: false,
+                          icon: Icons.person,
+                          hintName: 'User ID'),
+                      SizedBox(height: 10.0),
+                      getTextFormField(
+                          controller: _conUserName,
+                          icon: Icons.person_outline,
+                          inputType: TextInputType.name,
+                          hintName: 'User Name'),
+                      SizedBox(height: 10.0),
+                      getTextFormField(
+                          controller: _conEmail,
+                          icon: Icons.email,
+                          inputType: TextInputType.emailAddress,
+                          hintName: 'Email'),
+                      SizedBox(height: 10.0),
+                      getTextFormField(
+                        controller: _conPassword,
+                        icon: Icons.lock,
+                        hintName: 'Password',
+                        isObscureText: true,
                       ),
-                      onPressed: update,
-                    ),
-                  ),
-
-                  //Delete
-
-                  getTextFormField(
-                      controller: _conDelUserId,
-                      isEnable: false,
-                      icon: Icons.person,
-                      hintName: 'User ID'),
-                  SizedBox(height: 10.0),
-                  SizedBox(height: 10.0),
-                  Container(
-                    margin: EdgeInsets.all(30.0),
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      child: Text(
-                        'Delete',
-                        style: TextStyle(color: Colors.white),
+                      SizedBox(height: 10.0),
+                      Container(
+                        margin: EdgeInsets.all(30.0),
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Update',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onPressed: update,
+                        ),
                       ),
-                      onPressed: delete,
-                    ),
+
+                      //Delete
+
+                      getTextFormField(
+                          controller: _conDelUserId,
+                          isEnable: false,
+                          icon: Icons.person,
+                          hintName: 'User ID'),
+                      SizedBox(height: 10.0),
+                      SizedBox(height: 10.0),
+                      Container(
+                        margin: EdgeInsets.all(30.0),
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Delete',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onPressed: delete,
+                        ),
+                      ),
+                      ButtonGoHome(),
+                      ButtonGoBack(),
+                    ],
                   ),
-                  ButtonGoHome(),
-                  ButtonGoBack(),
-                ],
+                ),
               ),
             ),
           ),
-        ),
-      ),
-      )
-    );
+        ));
   }
 }

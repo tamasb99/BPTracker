@@ -1,9 +1,8 @@
-import 'package:bptracker_sqlite/Model/user_model.dart';
 
 class MatchModel {
   late String match_id;
-  late String team1; // majd meg kell valtoztatin userModel-re
-  late String team2; //
+  late String team1;
+  late String team2; 
 
   MatchModel(this.match_id, this.team1, this.team2);
 

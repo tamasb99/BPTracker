@@ -44,7 +44,7 @@ class _LoginFormState extends State<LoginForm> {
             Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (_) => HomeForm()),
-                    (Route<dynamic> route) => false);
+                (Route<dynamic> route) => false);
           });
         } else {
           alertDialog(context, "Error: User Not Found");
@@ -73,86 +73,98 @@ class _LoginFormState extends State<LoginForm> {
       throw 'Could not launch $url';
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('BeerpongTracker'),
-      ),
-      body: Container(
-
-      constraints: BoxConstraints.expand(),
-      decoration: BoxDecoration(
-      image: DecorationImage(
-      image: AssetImage("assets/images/wallpaper.jpg"),
-      opacity: 0.7,
-      fit: BoxFit.cover)),
-
-     child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-               genLoginSignupHeader('BPTracker'),
-                getTextFormField(
-                    controller: _conUserId,
-                    icon: Icons.person,
-                    hintName: 'User ID'),
-                SizedBox(height: 10.0),
-                getTextFormField(
-                  controller: _conPassword,
-                  icon: Icons.lock,
-                  hintName: 'Password',
-                  isObscureText: true,
-                ),
-                Container(
-                  margin: EdgeInsets.all(30.0),
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    child: Text(
-                      'Login',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                    ),
-                    onPressed: login,
-                  ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-
-                  children: [Row(
+        appBar: AppBar(
+          title: Text('BeerpongTracker'),
+        ),
+        body: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/wallpaper.jpg"),
+                  //opacity: 0.7,
+                  fit: BoxFit.cover)),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Container(
+              child: Center(
+                child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Does not have account? ', style: TextStyle(color: Colors.black, fontSize: 18),),
-                      ElevatedButton(
-                        child: Text('Sign Up',style: TextStyle(color: Colors.white, fontSize: 18),),
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => SignupForm()));
-                        },
+                      genLoginSignupHeader('BPTracker'),
+                      getTextFormField(
+                          controller: _conUserId,
+                          icon: Icons.person,
+                          hintName: 'Username'),
+                      SizedBox(height: 10.0),
+                      getTextFormField(
+                        controller: _conPassword,
+                        icon: Icons.lock,
+                        hintName: 'Password',
+                        isObscureText: true,
                       ),
-                    ],
-                  ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Want to read the rules? ',style: TextStyle(color: Colors.black, fontSize: 18),),
-                        ElevatedButton(
-                          child: Text('Educate yourself',style: TextStyle(color: Colors.white, fontSize: 18),),
-                          onPressed: _launchURL
-
+                      Container(
+                        margin: EdgeInsets.all(30.0),
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Login',
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
-                      ],
-                    ),
-                  ]
-                ),
-         ]
+                          onPressed: login,
+                        ),
+                      ),
+                      Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Does not have account? ',
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 18),
+                                ),
+                                ElevatedButton(
+                                  child: Text(
+                                    'Sign Up',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 18),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (_) => SignupForm()));
+                                  },
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Want to read the rules? ',
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 18),
+                                ),
+                                ElevatedButton(
+                                    child: Text(
+                                      'Educate yourself',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                    onPressed: _launchURL),
+                              ],
+                            ),
+                          ]),
+                    ]),
+              ),
+            ),
           ),
-          ),
-        ),
-      ),
-      )
-    );
+        ));
   }
 }

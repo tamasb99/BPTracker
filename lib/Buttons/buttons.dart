@@ -5,59 +5,63 @@ import '../screens/tournamentscreen.dart';
 
 import '../main.dart';
 
-class ButtonGoBack extends StatelessWidget{
+class ButtonGoBack extends StatelessWidget {
   @override
-  Widget build(BuildContext context)
-  {
-    return ElevatedButton(onPressed: () => Navigator.push(
-        context, MaterialPageRoute(builder: (context) => MyApp())),
-        child: Text('Go back',style: TextStyle(color: Colors.white, fontSize: 18),)
-    );
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => MyApp())),
+        child: Text(
+          'Go back',
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ));
   }
 }
 
-class ButtonGoHome extends StatelessWidget{
+class ButtonGoHome extends StatelessWidget {
   @override
-  Widget build(BuildContext context)
-  {
-    return ElevatedButton(onPressed: () => Navigator.push(
-        context, MaterialPageRoute(builder: (context) => IndexScreen())),
-        child: Text('Go HomePage',style: TextStyle(color: Colors.white, fontSize: 18),)
-    );
-  }
-}
-class ButtonAddTournament extends StatelessWidget{
-  @override
-  Widget build(BuildContext context)
-  {
-    return ElevatedButton(onPressed: () => Navigator.push(
-        context, MaterialPageRoute(builder: (context) => AddTournament())),
-        child: Text('Add a tournament')
-    );
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => IndexScreen())),
+        child: Text(
+          'Go HomePage',
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ));
   }
 }
 
-
-
-class ButtonsRegisterGoBack extends StatelessWidget{
-
+class ButtonAddTournament extends StatelessWidget {
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => AddTournament())),
+        child: Text('Add a tournament'));
+  }
+}
+
+class ButtonsRegisterGoBack extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
-      crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
+      mainAxisAlignment: MainAxisAlignment.center,
+      //Center Row contents horizontally,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      //Center Row contents vertically,
       children: [
         Padding(
           padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => MyApp())),
+          child: ElevatedButton(
+              onPressed: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => MyApp())),
               child: Text('Go back')),
         ),
         Padding(
           padding: const EdgeInsets.all(18.0),
           child: ElevatedButton(
-              onPressed: () /*=> Navigator.push(
+              onPressed:
+                  () /*=> Navigator.push(
                   context, MaterialPageRoute(
                   builder: (context) => RegisterScreen(
                       onChangedUsername: onChangedUsername,
@@ -67,7 +71,7 @@ class ButtonsRegisterGoBack extends StatelessWidget{
                       onChangedPlayedGames: onChangedPlayedGames),
               )
               ),*/
-                {},
+                  {},
               child: Text('Register')),
         ),
       ],
@@ -75,47 +79,36 @@ class ButtonsRegisterGoBack extends StatelessWidget{
   }
 }
 
-class ButtonLoginRegister extends StatelessWidget{
-
-
-
+class ButtonLoginRegister extends StatelessWidget {
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
-      crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
+      mainAxisAlignment: MainAxisAlignment.center,
+      //Center Row contents horizontally,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      //Center Row contents vertically,
       children: [
         Padding(
           padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(
-              builder: (context) => TournamentScreen()
-          )
-          ),
+          child: ElevatedButton(
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TournamentScreen())),
               child: Text('Log in')),
-
         ),
         Padding(
           padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(
-              onPressed: () => {},
-              child: Text('Register')
+          child: ElevatedButton(onPressed: () => {}, child: Text('Register')),
         ),
-        ),
-       /* ElevatedButton(
+        /* ElevatedButton(
             onPressed: () async {
             },
             child: Text('Sign in as a Guest'))*/
         Padding(
           padding: const EdgeInsets.all(18.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(
-              builder: (context) => TournamentScreen()
-          )
-          ),
+          child: ElevatedButton(
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TournamentScreen())),
               child: Text('Guest')),
-
         ),
       ],
     );
@@ -127,21 +120,20 @@ class tournament_buttons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // return Row(
-   //   mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
+    // return Row(
+    //   mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
     //  crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
-   return  GridView.count(
+    return GridView.count(
       crossAxisCount: 2,
-     shrinkWrap: true,
-     padding: const EdgeInsets.all(18.0),
-
+      shrinkWrap: true,
+      padding: const EdgeInsets.all(18.0),
       children: [
         Padding(
           padding: const EdgeInsets.all(10.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => TournamentScreen())),
+          child: ElevatedButton(
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TournamentScreen())),
               child: const Text('Join Tournament')),
-
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
@@ -152,10 +144,10 @@ class tournament_buttons extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
-          child: ElevatedButton(onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => TournamentScreen())),
+          child: ElevatedButton(
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TournamentScreen())),
               child: const Text('New Tournament')),
-
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
@@ -165,7 +157,6 @@ class tournament_buttons extends StatelessWidget {
               child: const Text('New Game')),
         ),
       ],
-
-   );
+    );
   }
 }
