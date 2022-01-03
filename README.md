@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="assets/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/images/logo.png" alt="Logo" width="80" height="80">
   <h3 align="center">BeerPongTracker</h3>
 </div>
 
@@ -29,13 +29,13 @@ A projekt celja egy sörpong  bajnokság nyomonkövetése, ahol lehet számolni 
 
 
 <div align="left">
-    <img src="assets/images/screen1.png" alt="Logo">
+    <img src="src/assets/images/screen1.png" alt="Logo">
 </div>
 <div align="left">
-    <img src="assets/images/screen2.png" alt="Logo">
+    <img src="src/assets/images/screen2.png" alt="Logo">
 </div>
 <div align="left">
-    <img src="assets/images/screen3.png" alt="Logo">
+    <img src="src/assets/images/screen3.png" alt="Logo">
 </div>
 
 ## Rendszerkövetelmények:
