@@ -30,10 +30,10 @@ A projekt celja egy sörpong  bajnokság nyomonkövetése ahol lehet számolni a
 <div align="left">
     <img src="assets/images/screen1.png" alt="Logo">
 </div>
-<div align="center">
+<div align="left">
     <img src="assets/images/screen2.png" alt="Logo">
 </div>
-<div align="right">
+<div align="left">
     <img src="assets/images/screen3.png" alt="Logo">
 </div>
 
