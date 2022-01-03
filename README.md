@@ -1,10 +1,9 @@
 <div id="top"></div>
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="assets/images/beerpong.png" alt="Logo" width="80" height="80">
+    <img src="assets/images/logo.png" alt="Logo" width="80" height="80">
   <h3 align="center">BeerPongTracker</h3>
 </div>
 
@@ -18,7 +17,7 @@
     </li>
     <li><a href="#Rendszerkövetelmények">Rendszerkövetelmények</a></li>
     <li><a href="#Használt nyelv és keretrendszer">Használt nyelv és keretrendszer</a></li>
-    <li><a href="# Főbb elemek">Főbb elemek</a></li>
+    <li><a href="#Főbb elemek">Főbb elemek</a></li>
   </ol>
 </details>
 
@@ -29,13 +28,13 @@ A projekt celja egy sörpong  bajnokság nyomonkövetése ahol lehet számolni a
 
 
 <div align="left">
-    <img src="assets/images/screen1.png" alt="Logo" width="80" height="80">
+    <img src="assets/images/screen1.png" alt="Logo">
 </div>
 <div align="center">
-    <img src="assets/images/screen2.png" alt="Logo" width="80" height="80">
+    <img src="assets/images/screen2.png" alt="Logo">
 </div>
 <div align="right">
-    <img src="assets/images/screen2.png" alt="Logo" width="80" height="80">
+    <img src="assets/images/screen3.png" alt="Logo">
 </div>
 
 ## Rendszerkövetelmények:
